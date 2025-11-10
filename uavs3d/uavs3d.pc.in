@@ -1,0 +1,10 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}@UAVS3D_INCLUDE@uavs3d
+
+Name: uavs3d
+Description: uavs3d library
+Version: @PROJECT_VERSION@
+Libs: -L${libdir} -luavs3d
+Cflags: -I${includedir}

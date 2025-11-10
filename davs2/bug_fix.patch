@@ -1,0 +1,45 @@
+diff --git a/source/common/common.h b/source/common/common.h
+index 75a7ab3..4c9208e 100644
+--- a/source/common/common.h
++++ b/source/common/common.h
+@@ -44,7 +44,7 @@ extern "C" {
+ 
+ #include "defines.h"
+ #include "osdep.h"
+-#include "davs2.h"
++#include "../davs2.h"
+ 
+ #include <stdlib.h>
+ #include <string.h>
+diff --git a/source/common/osdep.h b/source/common/osdep.h
+index 08bb05e..959adf4 100644
+--- a/source/common/osdep.h
++++ b/source/common/osdep.h
+@@ -68,7 +68,7 @@ extern "C" {
+ #endif
+ 
+ #if defined(__ICL) || defined(_MSC_VER)
+-#include "configw.h"
++#include "../configw.h"
+ #else
+ #include "config.h"
+ #endif
+diff --git a/version.sh b/version.sh
+index d5c4150..6572864 100644
+--- a/version.sh
++++ b/version.sh
+@@ -11,13 +11,8 @@
+ # setting API version
+ api=`grep '#define DAVS2_BUILD' < ./source/davs2.h | sed 's/^.* \([1-9][0-9]*\).*$/\1/'`
+ VER_R=0
+-VER_SHA='not-in-git-tree'
++VER_SHA='273ec948a045941ed'
+ 
+-# get version of remote origin/master and local HEAD
+-if [ -d .git ] && command -v git >/dev/null 2>&1 ; then
+-    VER_R=`git rev-list --count origin/master`
+-    VER_SHA=`git rev-parse HEAD | cut -c -16`
+-fi
+ 
+ # generate version numbers
+ VER_MAJOR=`echo $(($api / 10))`

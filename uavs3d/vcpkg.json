@@ -1,0 +1,32 @@
+{
+  "name": "uavs3d",
+  "version": "2.1.0",
+  "description": "uAVS3d: the fastest AVS3 decoder, supports AVS3-P2 baseline profile",
+  "homepage": "https://github.com/uavs3/uavs3d",
+  "license": "BSD-2-Clause",
+  "supports": "!uwp",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ],
+  "features": {
+    "asm": {
+      "description": "Enable assembly optimizations (SSE4.1, AVX2)",
+      "supports": "(x86 | x64) & !staticcrt",
+      "dependencies": [
+      ]
+    },
+    "tools": {
+      "description": "Build command line tools"
+    }
+  },
+  "default-features": [
+    "asm"
+  ]
+}

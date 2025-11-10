@@ -1,0 +1,10 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}@DAVS2_INCLUDE_PATH@davs2
+
+Name: davs2
+Description: davs2 library
+Version: @PROJECT_VERSION@
+Libs: -L${libdir} -ldavs2
+Cflags: -I${includedir}
